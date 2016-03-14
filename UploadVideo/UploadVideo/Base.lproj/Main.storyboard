@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5i-zl-MFq">
+                                <rect key="frame" x="256" y="175" width="89" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LTS-sB-LlO"/>
+                                    <constraint firstAttribute="width" constant="89" id="UJd-XB-fQ8"/>
+                                </constraints>
+                                <state key="normal" title="Select image"/>
+                                <connections>
+                                    <action selector="tapSelectImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cvz-2Q-PRT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bO0-em-LiO">
+                                <rect key="frame" x="256" y="220" width="89" height="30"/>
+                                <state key="normal" title="Select video"/>
+                                <connections>
+                                    <action selector="tapSelectVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mdT-vo-mgN"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hTJ-gy-3Fb">
+                                <rect key="frame" x="167" y="258" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="00s-1t-fFD"/>
+                                    <constraint firstAttribute="height" constant="128" id="Fy5-CB-sDQ"/>
+                                </constraints>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4ki-ry-nND">
+                                <rect key="frame" x="180" y="108" width="240" height="3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4ki-ry-nND" secondAttribute="height" multiplier="120:1" id="DTn-lB-9Xo"/>
+                                    <constraint firstAttribute="height" constant="2" id="rnW-nO-Ul4"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4ki-ry-nND" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="108" id="2Zh-QU-rIV"/>
+                            <constraint firstItem="hTJ-gy-3Fb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="167" id="Bse-oO-Rxg"/>
+                            <constraint firstItem="bO0-em-LiO" firstAttribute="top" secondItem="J5i-zl-MFq" secondAttribute="bottom" constant="15" id="DyN-kg-EpE"/>
+                            <constraint firstItem="J5i-zl-MFq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qv8-dF-hoX"/>
+                            <constraint firstItem="bO0-em-LiO" firstAttribute="width" secondItem="J5i-zl-MFq" secondAttribute="width" id="ZNh-su-rkE"/>
+                            <constraint firstItem="bO0-em-LiO" firstAttribute="height" secondItem="J5i-zl-MFq" secondAttribute="height" id="cHx-bw-Xza"/>
+                            <constraint firstItem="bO0-em-LiO" firstAttribute="centerX" secondItem="J5i-zl-MFq" secondAttribute="centerX" id="g87-77-Sie"/>
+                            <constraint firstItem="4ki-ry-nND" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerXWithinMargins" id="gIJ-mn-wrZ"/>
+                            <constraint firstItem="hTJ-gy-3Fb" firstAttribute="top" secondItem="bO0-em-LiO" secondAttribute="bottom" constant="8" id="oaR-nJ-9WX"/>
+                            <constraint firstItem="J5i-zl-MFq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="175" id="s6O-Jl-PQA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageSelected" destination="hTJ-gy-3Fb" id="6tx-m0-Cph"/>
+                        <outlet property="progressView" destination="4ki-ry-nND" id="3DE-Sv-ID1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="591" y="327"/>
+        </scene>
+    </scenes>
+</document>
